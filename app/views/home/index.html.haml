@@ -1,0 +1,66 @@
+.site-wrapper
+  .site-wrapper-inner
+    .cover-container
+      .masthead.clearfix
+        .inner
+          %h3.masthead-brand= image_tag('wingman-white.png')
+          %ul.nav.masthead-nav
+            %li.active
+              %a{href: "#"} Home
+            %li
+              %a{href: "#features"} Features
+            %li
+              %a{href: "#"} Contact
+      .inner.cover
+        %h1.cover-heading Cover your page.
+        %p.lead Cover is a one-page template for building simple and beautiful home pages. Download, edit the text, and add your own fullscreen background photo to make it your own.
+        %p.lead
+          %a.btn.btn-lg.btn-default{href: "#features"} Learn more
+.background
+  #features.container.marketing
+    / Main component for a primary marketing message or call to action
+    / Three columns of text below the carousel
+    .row
+      .col-lg-4
+        %img.img-circle{alt: "Generic placeholder image", "src" => asset_url('wingman-white.png')}/
+        %h2 Heading
+        %p Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.
+      / /.col-lg-4
+      .col-lg-4
+        %img.img-circle{alt: "Generic placeholder image", "src" => asset_url('wingman-white.png')}/
+        %h2 Heading
+        %p Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.
+      / /.col-lg-4
+      .col-lg-4
+        %img.img-circle{alt: "Generic placeholder image", "src" => asset_url('wingman-white.png')}/
+        %h2 Heading
+        %p Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
+      / /.col-lg-4
+    / /.row
+
+.container.quick-slogan
+  .row
+    .col-lg-12
+      %h1.cover-heading Drink Better, Together
+
+    / START THE FEATURETTES
+.background
+  #features.container.marketing
+    .row.featurette
+      .col-md-7.featurette-text
+        %h2.featurette-heading
+          First featurette heading.
+          %span.text-muted It'll blow your mind.
+        %p.lead Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.
+      .col-md-5
+        %img.featurette-image.img-responsive{alt: "Generic placeholder image", "src" => asset_url('iphonelogin.png')}/
+    %hr.featurette-divider/
+    .row.featurette
+      .col-md-5
+        %img.featurette-image.img-responsive{alt: "Generic placeholder image", "src" => asset_url('iphonelogin.png')}/
+      .col-md-7.featurette-text
+        %h2.featurette-heading
+          Oh yeah, it's that good.
+          %span.text-muted See for yourself.
+        %p.lead Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.
+    / /END THE FEATURETTES
