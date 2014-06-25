@@ -12,8 +12,8 @@
             %li
               %a{href: "#"} Contact
       .inner.cover
-        %h1.cover-heading Cover your page.
-        %p.lead Cover is a one-page template for building simple and beautiful home pages. Download, edit the text, and add your own fullscreen background photo to make it your own.
+        %h1.cover-heading Drink Better, Together.
+        %p.lead Simultaneously discover the hottest places to be based on your preferences, while connecting with friends tonight.
         %p.lead
           %a.btn.btn-lg.btn-default{href: "#features"} Learn more
 .background
@@ -23,25 +23,25 @@
     .row
       .col-lg-4
         %img.img-circle{alt: "Generic placeholder image", "src" => asset_url('wingman-white.png')}/
-        %h2 Heading
-        %p Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.
+        %h2 Local
+        %p WingMan lets you discover new bars / taverns / clubs that are near you, so you can have fun without dropping too much for a cab.
       / /.col-lg-4
       .col-lg-4
         %img.img-circle{alt: "Generic placeholder image", "src" => asset_url('wingman-white.png')}/
-        %h2 Heading
-        %p Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.
+        %h2 Mobile
+        %p Through the app, WingMan gives insight into a location's status including service times, busyness, and overall vibe.
       / /.col-lg-4
       .col-lg-4
         %img.img-circle{alt: "Generic placeholder image", "src" => asset_url('wingman-white.png')}/
-        %h2 Heading
-        %p Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
+        %h2 Social
+        %p Going out wouldn't be fun without friends, right? WingMan shows you where your closest friends are going that night.
       / /.col-lg-4
     / /.row
 
 .container.quick-slogan
   .row
     .col-lg-12
-      %h1.cover-heading Drink Better, Together
+      %h1.cover-heading The perfect night, every night.
 
     / START THE FEATURETTES
 .background
@@ -49,9 +49,9 @@
     .row.featurette
       .col-md-7.featurette-text
         %h2.featurette-heading
-          First featurette heading.
-          %span.text-muted It'll blow your mind.
-        %p.lead Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.
+          Every Bar.
+          %span.text-muted On your phone.
+        %p.lead We've all struggled to find the perfect place to drink with our friends. WingMan takes the hassle out of finding those places by using your location, social media connectivity, and crowdsourcing to match you with the perfect venue. Imagine knowing how busy bars are in your area, and what friends of yours are there. 
       .col-md-5
         %img.featurette-image.img-responsive{alt: "Generic placeholder image", "src" => asset_url('iphonelogin.png')}/
     %hr.featurette-divider/
@@ -60,7 +60,18 @@
         %img.featurette-image.img-responsive{alt: "Generic placeholder image", "src" => asset_url('iphonelogin.png')}/
       .col-md-7.featurette-text
         %h2.featurette-heading
-          Oh yeah, it's that good.
-          %span.text-muted See for yourself.
-        %p.lead Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.
+          Enjoy the Night.
+          %span.text-muted With friends.
+        %p.lead Spend less time deciding what bar to go to and more time enjoying the moment with your friends. WingMan shows you where your closest friends are going. Get a group together and we might even buy the first round.
     / /END THE FEATURETTES
+    / = form_for(:user, :url => registration_path(:user)) do |f|
+    /   .form-horizontal
+    /     .form-group
+    /       .col-sm-4.control-label= f.label :email
+    /       .col-sm-8= f.email_field :email, :class => "form-control"
+    /     .form-group
+    /       .col-sm-4.control-label= f.label :password
+    /       .col-sm-8= f.password_field :password, autocomplete: "off", :class => "form-control"
+    /     .form-group
+    /       .col-sm-offset-4.col-sm-8
+    /         = f.submit "Sign In", class: "formButton btn btn-default"
