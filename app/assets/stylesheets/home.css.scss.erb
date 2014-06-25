@@ -3,7 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 body { 
-  background: url(<%= image_path('beach.jpg') %>) no-repeat center center fixed; 
+  background: url(<%= image_path('city.jpg') %>) no-repeat center center fixed; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -180,10 +180,11 @@ body {
  */
 
 .cover {
-  padding: 0 20px;
+  padding: 200px;
   text-align: center;
-  text-shadow: 0 1px 3px rgba(0,0,0,.5);
+  text-shadow: 0 0px 5px rgba(0,0,0,1);
   color:#fff;
+  background-image: radial-gradient(circle closest-side, rgba(0,0,0,.8),rgba(0,0,0,0));
 }
 .cover .btn-lg {
   padding: 10px 20px;
@@ -231,6 +232,6 @@ body {
   .masthead,
   .mastfoot,
   .cover-container {
-    width: 700px;
+    width: 900px;
   }
 }
