@@ -15,3 +15,45 @@ $(function() {
     }
   });
 });
+
+var threeColLoaded = false;
+var sloganAnim = false;
+
+$( window ).scroll(function() {
+  if (window.pageYOffset > 200 && !threeColLoaded){
+    loadThreeCol();
+  }
+  if (window.pageYOffset > 1000 && !sloganAnim){
+    sloganAnimate();
+  }
+});
+
+function sloganAnimate(){
+  $('.font-anim').css("margin-left", 0);
+  $('.font-anim').css("opacity", 1);
+  sloganAnim = true;
+};
+
+function loadThreeCol(){
+  $('#market1').css("opacity", 1);
+  setTimeout(function(){
+    $('#market2').css("opacity", 1);
+  }, 500);
+  setTimeout(function(){
+    $('#market3').css("opacity", 1);
+  }, 1000);
+  threeColLoaded = true;
+};
+
+$(document).ready(function(){
+  setTimeout(function(){
+    $('.masthead-brand').css("margin-top", -10);
+  }, 500);
+  setTimeout(function(){
+    $('.masthead-nav').css("margin-top", 0);
+    $('.masthead-nav').css("opacity", 1);
+  }, 1000);
+  setTimeout(function(){
+    $('#main-cover').css("opacity", 1);
+  }, 2000);
+}); 
