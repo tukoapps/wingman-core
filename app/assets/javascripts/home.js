@@ -18,6 +18,10 @@ $(function() {
 
 var threeColLoaded = false;
 var sloganAnim = false;
+var mock1Anim = false;
+var mock2Anim = false;
+var mock1TextAnim = false;
+var mock2TextAnim = false;
 
 $( window ).scroll(function() {
   if (window.pageYOffset > 200 && !threeColLoaded){
@@ -26,7 +30,37 @@ $( window ).scroll(function() {
   if (window.pageYOffset > 1000 && !sloganAnim){
     sloganAnimate();
   }
+  if (window.pageYOffset > 1400 && !mock1Anim){
+    mock1Animate();
+    mock1TextAnimate();
+  }
+  if (window.pageYOffset > 1800 && !mock2Anim){
+    mock2Animate();
+    mock2TextAnimate();
+  }
 });
+
+function mock1Animate(){
+  $('#mock1').css("margin-right", 100);
+  $('#mock1').css("opacity", 1);
+  mock1Anim = true;
+};
+
+function mock2Animate(){
+  $('#mock2').css("margin-left", 100);
+  $('#mock2').css("opacity", 1);
+  mock2Anim = true;
+};
+
+function mock1TextAnimate(){
+  $('#mock1-text').css("opacity", 1);
+  mock1TextAnim = true;
+};
+
+function mock2TextAnimate(){
+  $('#mock2-text').css("opacity", 1);
+  mock2TextAnim = true;
+};
 
 function sloganAnimate(){
   $('.font-anim').css("margin-left", 0);
