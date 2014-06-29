@@ -10,19 +10,7 @@
     transition: $transition-property $transition-time $method;
 }
 
- 
 
-.body-wrap { 
-  background: url(<%= image_path('city.jpg') %>) no-repeat center center fixed; 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  height: 100%;
-  width: 100%;
-  position: fixed;
-  z-index: -10;
-}
 /*
  * Globals
  */
@@ -96,6 +84,11 @@ body {
 }
 body {
   color: #5a5a5a;
+  background: url(<%= image_path('city.jpg') %>) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
 /* Extra markup and styles for table-esque vertical and horizontal centering */
