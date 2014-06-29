@@ -68,7 +68,7 @@
 #contact.container.quick-slogan.form-container
   .row
     .col-lg-12
-      %h2#email-feedback.cover-heading.font-anim Subscribe to get the latest news about WingMan!
+      %h2#email-feedback.cover-heading Subscribe to WingMan's newsletter to receive exclusive beta access, news on development, and much more.
       %br/
       = form_for @beta_email, :remote => true, :class => "form-inline", :html => {:'data-type' => 'json'} do |a|
         .form-inline
@@ -88,15 +88,3 @@
             = link_to image_tag("instagram.png"), "http://instagram.com", :target => "_blank"
           %li
             = link_to image_tag("youtube.png"), "http://youtube.com", :target => "_blank"
-    / /END THE FEATURETTES
-    / = form_for(:user, :url => registration_path(:user)) do |f|
-    /   .form-horizontal
-    /     .form-group
-    /       .col-sm-4.control-label= f.label :email
-    /       .col-sm-8= f.email_field :email, :class => "form-control"
-    /     .form-group
-    /       .col-sm-4.control-label= f.label :password
-    /       .col-sm-8= f.password_field :password, autocomplete: "off", :class => "form-control"
-    /     .form-group
-    /       .col-sm-offset-4.col-sm-8
-    /         = f.submit "Sign In", class: "formButton btn btn-default"

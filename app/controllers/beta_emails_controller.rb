@@ -21,6 +21,7 @@ class BetaEmailsController < ApplicationController
     else
       @beta_email = BetaEmail.new(beta_email_params)
       if @beta_email.save
+        UserMailer.welcome_email(@beta_email.email).deliver
         render json: {:status => "success", :message => "Thanks for Subscribing!"}   
       else
         render json: {:status => "error", :message => "Incorrect format."}
