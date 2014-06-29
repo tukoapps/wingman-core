@@ -1,6 +1,29 @@
 // Place all the behaviors and hooks related to the matching controller here.
 // All this logic will automatically be available in application.js.
 
+
+var ready;
+ready = function(){
+
+  $('.new_beta_email').on('ajax:success',function(data, status, xhr){
+    if (status['status'] == "success"){
+      $('.form-container').css("background-image", "none");
+      $('.form-container').css("background-color", "#2ecc71");
+    }else{
+      $('.form-container').css("background-image", "none");
+      $('.form-container').css("background-color", "#e74c3c");
+    }
+    $('#email-feedback').text(status['message']);
+    
+  }).on('ajax:error',function(xhr, status, error){
+    console.log(status);
+  });
+
+};
+
+$(document).ready(ready);
+$(document).on('page:load', ready);
+
 $(function() {
   $('a[href*=#]:not([href=#])').click(function() {
     if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {

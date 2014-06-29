@@ -220,11 +220,35 @@ body {
  * Footer
  */
 
-.mastfoot {
-  color: #999; /* IE8 proofing */
-  color: rgba(255,255,255,.5);
+.footer {
+  background-color: #FFF;
+  width: 100%;
 }
 
+.social {
+  width: 600px;
+  padding-left: 0;
+}
+.social li {
+  display: inline;
+  list-style-type: none;
+  text-align: center;
+  img {
+    width: 100px;
+    margin-top: 0px;
+    opacity: 0.6;
+    @include transition(all, .3s, linear);
+  }
+  img:hover {
+    width: 100px;
+    opacity: 1;
+    margin-top: -15px;
+  }
+}
+
+.form-container {
+  @include transition(all, .5s, linear);
+}
 
 /*
  * Affix and center
