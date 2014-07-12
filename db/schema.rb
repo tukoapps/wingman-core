@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140628221444) do
+ActiveRecord::Schema.define(version: 20140711041713) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -35,9 +35,18 @@ ActiveRecord::Schema.define(version: 20140628221444) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "authentication_token"
+    t.string   "access_token"
+    t.string   "first_name"
+    t.string   "last_name"
+    t.boolean  "male"
+    t.integer  "fb_id"
   end
 
+  add_index "users", ["access_token"], name: "index_users_on_access_token", using: :btree
+  add_index "users", ["authentication_token"], name: "index_users_on_authentication_token", using: :btree
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
+  add_index "users", ["fb_id"], name: "index_users_on_fb_id", using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
 end
