@@ -26,9 +26,9 @@ API Doc: (current version - v1)
 ---------
 
 - Root url:
-  ```sh
-  http://www.get-wingman.com/api/v1/
-  ```
+```sh
+http://www.get-wingman.com/api/v1/
+```
 - more api docs to come...
 
 
