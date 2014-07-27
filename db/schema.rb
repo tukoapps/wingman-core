@@ -11,10 +11,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140711041713) do
+ActiveRecord::Schema.define(version: 20140727050647) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "bars", force: true do |t|
+    t.string   "name"
+    t.string   "yelp_id"
+    t.string   "logo_url"
+    t.string   "image_url"
+    t.decimal  "lat",           precision: 10, scale: 6
+    t.decimal  "lon",           precision: 10, scale: 6
+    t.integer  "review_count"
+    t.decimal  "rating",        precision: 4,  scale: 2
+    t.integer  "current_users"
+    t.decimal  "price",         precision: 4,  scale: 2
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "phone_number"
+  end
 
   create_table "beta_emails", force: true do |t|
     t.string   "email",      default: "", null: false

@@ -23,6 +23,7 @@ Wingman::Application.routes.draw do
           get 'login'
         end
       end
+      resources :bars
     end
   end
 

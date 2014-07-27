@@ -12,6 +12,8 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'simple_token_authentication'
 
+gem 'yelp'
+
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'
 
@@ -22,6 +24,10 @@ end
 
 group :production do
   gem 'rails_12factor'
+end
+
+group :development do
+  gem 'pry'
 end
 
 # Use ActiveModel has_secure_password
