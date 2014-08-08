@@ -21,7 +21,6 @@ module Api
         else
           @mobile_user = MobileUser.where(:fb_id => hash['id'].to_i).first
           if @mobile_user
-            binding.pry
             respond_with @mobile_user
           else
             user = MobileUser.new(:fb_id => hash['id'].to_i, 
@@ -30,7 +29,6 @@ module Api
                                   :male => (hash['gender'] == "male") ? true : false
                                   )
             if user.save
-              binding.pry
               respond_with user
             end
           end
