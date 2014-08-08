@@ -5,7 +5,9 @@ module Api
       respond_to :json
       
       def index
-        respond_with Bar.all.limit(20)
+        # hash = {:id => params[:id], :lat => params[:lat], :lon => params[:lon]}
+        # respond_with Bar.all.limit(20)
+        respond_with Bar.within(5, :origin => [params[:lat],params[:lon]]).limit(5)
       end
       
       def show

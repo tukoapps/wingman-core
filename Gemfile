@@ -11,6 +11,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'simple_token_authentication'
+gem 'geokit-rails'
 
 gem 'yelp'
 
