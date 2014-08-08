@@ -28,7 +28,10 @@ end
 
 group :development do
   gem 'pry'
+  gem 'better_errors'
 end
+
+gem 'annotate', "~> 2.6.5"
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

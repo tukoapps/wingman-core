@@ -29,4 +29,20 @@ namespace :yelp do
       end
     end
   end
+
+  task :test_offset => :environment do
+    require 'yelp'
+
+    client = Yelp::Client.new({ consumer_key: "rvrO-9xzRoW4eACragjyng",
+                                consumer_secret: "A4N-ZF6uEX7TvyslVa1MyJYce7s",
+                                token: "eI1g-wy6UcXXTBZYEHQPOfgJqKePizFj",
+                                token_secret: "Og9cu-J9kacGdY28gRShlrAAzFE"
+                              })
+    0.upto(5).each do |x|
+      resp = client.search('Chicago', { term: 'bars' }, offset: x*20)
+      resp.businesses.each do |bar|
+        puts bar.name
+      end
+    end
+  end
 end

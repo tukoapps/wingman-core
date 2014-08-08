@@ -5,7 +5,7 @@ module Api
       respond_to :json
       
       def index
-        respond_with Bar.all
+        respond_with Bar.all.limit(20)
       end
       
       def show
