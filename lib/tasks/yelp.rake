@@ -43,7 +43,7 @@ namespace :yelp do
     types = ['champagne_bars', 'divebars', 'gaybars', 'irish_pubs', 'lounges', 'pubs', 'sportsbars', 'wine_bars']
     types.each do |type|
       total_type = client.search(args[:city], { term: 'bars', category_filter: type}, limit: 1).total
-      0.upto(1).each do |x|
+      0.upto((total_type/20).ceil).each do |x|
         resp = client.search(args[:city], { term: 'bars', category_filter: 'pubs' }, offset: x*20, limit: 20)
         resp.businesses.each do |bar|
           old_bar = Bar.where(:yelp_id => bar.id)
