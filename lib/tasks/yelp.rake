@@ -40,7 +40,7 @@ namespace :yelp do
                                 token: "eI1g-wy6UcXXTBZYEHQPOfgJqKePizFj",
                                 token_secret: "Og9cu-J9kacGdY28gRShlrAAzFE"
                               })
-    types = ['champagne_bars', 'divebars', 'gaybars', 'irish_pubs', 'lounges', 'pubs', 'sportsbars', 'wine_bars']
+    types = ['nightlife', 'champagne_bars', 'divebars', 'gaybars', 'irish_pubs', 'lounges', 'pubs', 'sportsbars', 'wine_bars']
     types.each do |type|
       total_type = client.search(args[:city], { term: 'bars', category_filter: type}, limit: 1).total
       0.upto((total_type/20).ceil).each do |x|
