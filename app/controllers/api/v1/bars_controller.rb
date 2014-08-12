@@ -7,7 +7,7 @@ module Api
       def index
         # hash = {:id => params[:id], :lat => params[:lat], :lon => params[:lon]}
         # respond_with Bar.all.limit(20)
-        respond_with Bar.within(5, :origin => [params[:lat],params[:lon]]).limit(5)
+        respond_with Bar.near([params[:lat],params[:lon]], 20).limit(20)
       end
       
       def show

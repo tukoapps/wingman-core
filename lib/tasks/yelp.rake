@@ -13,10 +13,11 @@ namespace :yelp do
     resp.businesses.each do |bar|
       old_bar = Bar.where(:yelp_id => bar.id)
       if !old_bar.exists?
+        bigger_image = bar.image_url.sub! "ms.jpg", "ls.jpg"
         new_bar = Bar.new(:name => bar.name,
                           :yelp_id => bar.id,
                           :logo_url => bar.image_url,
-                          :image_url => bar.image_url,
+                          :image_url => (defined? bigger_image) ? bigger_image : bar.image_url,
                           :phone_number => (defined? bar.phone) ? bar.phone : nil,
                           :lat => (defined? bar.location.coordinate) ? bar.location.coordinate.latitude : nil,
                           :lon => (defined? bar.location.coordinate) ? bar.location.coordinate.longitude : nil,
@@ -56,10 +57,11 @@ namespace :yelp do
             end
 
             begin
+              bigger_image = bar.image_url.sub! "ms.jpg", "ls.jpg"
               new_bar = Bar.new(:name => bar.name,
                                 :yelp_id => bar.id,
                                 :logo_url => bar.image_url,
-                                :image_url => bar.image_url,
+                                :image_url => (defined? bigger_image) ? bigger_image : bar.image_url,
                                 :phone_number => (defined? bar.phone) ? bar.phone : nil,
                                 :lat => (defined? bar.location.coordinate) ? bar.location.coordinate.latitude : (defined? coords[0]) ? coords[0] : nil,
                                 :lon => (defined? bar.location.coordinate) ? bar.location.coordinate.longitude : (defined? coords[1]) ? coords[1] : nil,
