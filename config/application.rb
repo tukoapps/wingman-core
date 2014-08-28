@@ -20,5 +20,9 @@ module Wingman
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
     config.gem "geokit"
+    config.assets.precompile += [
+      'home.css.scss',
+      'custom.css.scss'
+    ]
   end
 end
