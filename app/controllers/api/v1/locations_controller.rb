@@ -6,7 +6,7 @@ module Api
       
       def new
         if params[:user_id]
-          bar = Bar.near([params[:lat],params[:lon]], 0.01).first
+          bar = Bar.near([params[:lat],params[:lon]], 0.07).first
           user = MobileUser.find(params[:user_id])
           if bar
             event = Event.where('bar_id = ? AND mobile_user_id = ? AND created_at > ?', bar.id, user.id, Time.now-15.minutes).first
