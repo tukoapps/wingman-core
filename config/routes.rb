@@ -24,6 +24,7 @@ Wingman::Application.routes.draw do
         end
       end
       resources :bars
+      resources :locations 
     end
   end
 
