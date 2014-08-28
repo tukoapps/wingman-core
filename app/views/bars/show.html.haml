@@ -1,0 +1,41 @@
+= stylesheet_link_tag 'custom'
+.container
+  .header
+    %ul.nav.nav-pills.pull-right
+      %li
+        %a{:href => bars_path} All Bars
+      %li
+        %a{:href => new_bar_path} New Bar
+    %h3.text-muted= @bar.name
+  .row.marketing
+    .container
+      .col-md-4
+        %img.logo_image{:src => @bar.logo_url}
+        %br/
+        %br/
+        = link_to "Edit", edit_bar_path(@bar), :class => "btn btn-primary"
+        = link_to "Delete", @bar, method: :delete, data: { confirm: "You sure?" }, title: @bar.name, :class => "btn btn-danger"
+        %br/
+        %br/
+        = @bar.lat.to_s + ", " + @bar.lon.to_s
+      .col-md-8
+        %img.header_image{:src => @bar.image_url}
+        %br/
+        %br/
+        = @bar.address
+        %br/
+        = @bar.city.to_s + ","
+        = @bar.state
+        %br/
+        = @bar.neighborhood
+        %br/
+        = @bar.phone_number
+        %br/
+        = "Rating: " + @bar.rating.to_s
+        %br/
+        = "Price: " + @bar.price.to_s
+        %br/
+        = @bar.category
+        
+  .footer
+    %p © WingMan 2014

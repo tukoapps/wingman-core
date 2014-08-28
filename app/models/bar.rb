@@ -16,10 +16,16 @@
 #  created_at    :datetime
 #  updated_at    :datetime
 #  phone_number  :string(255)
+#  address       :string(255)
+#  city          :string(255)
+#  state         :string(255)
+#  neighborhood  :string(255)
+#  category      :string(255)
 #
 
 class Bar < ActiveRecord::Base
   geocoded_by :address, :latitude  => :lat, :longitude => :lon 
+  after_validation :geocode
   
   has_many :events
 end

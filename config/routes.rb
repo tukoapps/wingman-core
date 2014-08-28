@@ -13,17 +13,13 @@ Wingman::Application.routes.draw do
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
 
   # Example resource route (maps HTTP verbs to controller actions automatically):
-  resources :beta_emails
+  resources :beta_emails, :bars
 
   namespace :api, defaults: {format: 'json'} do
     namespace :v1 do
       resources :users
-      resources :sessions do
-        member do
-          get 'login'
-        end
-      end
-      resources :bars
+      resources :sessions 
+      resources :bars 
       resources :locations 
     end
   end

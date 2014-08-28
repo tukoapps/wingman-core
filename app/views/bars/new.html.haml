@@ -1,0 +1,54 @@
+= stylesheet_link_tag 'custom'
+.container
+  .header
+    %ul.nav.nav-pills.pull-right
+      %li
+        %a{:href => bars_path} All Bars
+      %li.active
+        %a{:href => new_bar_path} New Bar
+    %h3.text-muted Add Bar
+  .row.marketing
+    .container
+      .col-md-12.centerForm
+        = form_for(@bar) do |f|
+          = render 'shared/error_messages', object: f.object
+          .form-horizontal
+            .form-group
+              .col-sm-4.control-label= f.label :name
+              .col-sm-8= f.text_field :name, :class => "form-control", :placeholder => "e.g. Joe's Pub"
+            .form-group
+              .col-sm-4.control-label= f.label :logo_url
+              .col-sm-8= f.text_field :logo_url, :class => "form-control", :placeholder => "bar's logo should be around (300 x 300)"
+            .form-group
+              .col-sm-4.control-label= f.label :image_url
+              .col-sm-8= f.text_field :image_url, :class => "form-control", :placeholder => "header image should be around (800 x 400)"
+            .form-group
+              .col-sm-4.control-label= f.label :rating
+              .col-sm-8= f.number_field :rating, step: 0.5, :class => "form-control", :placeholder => "out of 5 (e.g. 4.5)"
+            .form-group
+              .col-sm-4.control-label= f.label :price
+              .col-sm-8= f.number_field :price, step: 0.5, :class => "form-control", :placeholder => "out of 5 (e.g. 4.5)"
+            .form-group
+              .col-sm-4.control-label= f.label :phone_number
+              .col-sm-8= f.text_field :phone_number, :class => "form-control", :placeholder => "optional"
+            .form-group
+              .col-sm-4.control-label= f.label :address
+              .col-sm-8= f.text_field :address, :class => "form-control", :placeholder => "e.g. 1232 Main St."
+            .form-group
+              .col-sm-4.control-label= f.label :city
+              .col-sm-8= f.text_field :city, :class => "form-control", :placeholder => "e.g. Chicago"
+            .form-group
+              .col-sm-4.control-label= f.label :state
+              .col-sm-8= f.text_field :state, :class => "form-control", :placeholder => "e.g. IL"
+            .form-group
+              .col-sm-4.control-label= f.label :neighborhood
+              .col-sm-8= f.text_field :neighborhood, :class => "form-control", :placeholder => "optional"
+            .form-group
+              .col-sm-4.control-label= f.label :category
+              .col-sm-8
+                = f.select :category, options_for_select(%w[champagne_bars divebars gaybars college_bars lounges pubs sportsbars wine_bars nightclubs]), { include_blank: false }, :class => "form-control"
+            .form-group
+              .col-sm-offset-4.col-sm-8
+                = f.submit "Create Bar", class: "btn btn-default"
+  .footer
+    %p © WingMan 2014

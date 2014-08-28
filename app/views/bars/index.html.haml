@@ -1,0 +1,31 @@
+= stylesheet_link_tag 'custom'
+.container
+  .header
+    %ul.nav.nav-pills.pull-right
+      %li.active
+        %a{:href => bars_path} All Bars
+      %li
+        %a{:href => new_bar_path} New Bar
+    %h3.text-muted All Bars
+  .row.marketing
+    .container
+      %table.table.table-hover
+        %thead
+          %tr
+            %th Name
+            %th Rating
+            %th City
+            %th State
+        %tbody
+        - @bars.each do |bar|
+          %tr
+            %td
+              = link_to bar.name, bar
+            %td
+              = bar.rating.to_s
+            %td
+              = bar.city
+            %td
+              = bar.state
+  .footer
+    %p © WingMan 2014
