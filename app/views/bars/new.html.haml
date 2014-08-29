@@ -33,13 +33,7 @@
               .col-sm-8= f.text_field :phone_number, :class => "form-control", :placeholder => "optional"
             .form-group
               .col-sm-4.control-label= f.label :address
-              .col-sm-8= f.text_field :address, :class => "form-control", :placeholder => "e.g. 1232 Main St."
-            .form-group
-              .col-sm-4.control-label= f.label :city
-              .col-sm-8= f.text_field :city, :class => "form-control", :placeholder => "e.g. Chicago"
-            .form-group
-              .col-sm-4.control-label= f.label :state
-              .col-sm-8= f.text_field :state, :class => "form-control", :placeholder => "e.g. IL"
+              .col-sm-8= f.text_field :address, :class => "form-control", :placeholder => "e.g. 1232 Main St. Chicago, IL"
             .form-group
               .col-sm-4.control-label= f.label :neighborhood
               .col-sm-8= f.text_field :neighborhood, :class => "form-control", :placeholder => "optional"
@@ -47,6 +41,7 @@
               .col-sm-4.control-label= f.label :category
               .col-sm-8
                 = f.select :category, options_for_select(%w[champagne_bars divebars gaybars college_bars lounges pubs sportsbars wine_bars nightclubs]), { include_blank: false }, :class => "form-control"
+            = f.hidden_field :current_users, :value => 0
             .form-group
               .col-sm-offset-4.col-sm-8
                 = f.submit "Create Bar", class: "btn btn-default"

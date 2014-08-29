@@ -14,8 +14,8 @@
           %tr
             %th Name
             %th Rating
-            %th City
-            %th State
+            %th People There
+            %th Address
         %tbody
         - @bars.each do |bar|
           %tr
@@ -24,8 +24,8 @@
             %td
               = bar.rating.to_s
             %td
-              = bar.city
+              = bar.current_users.to_s
             %td
-              = bar.state
+              = bar.address
   .footer
     %p © WingMan 2014

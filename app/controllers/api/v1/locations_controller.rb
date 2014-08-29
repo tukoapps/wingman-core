@@ -17,6 +17,7 @@ module Api
               new_event = Event.new(:bar_id => bar.id, :mobile_user_id => user.id, :elapsed_minutes => 0).save
               respond_with new_event
             end
+            bar.update_attributes(:current_users => Event.where('bar_id = ? AND updated_at > ?', bar.id, Time.now - 15.minutes).count)
           else
             respond_with "Error: no bar found"
           end
