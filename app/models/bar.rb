@@ -28,4 +28,8 @@ class Bar < ActiveRecord::Base
   after_validation :geocode
   
   has_many :events
+
+  def current_users
+    Event.where('bar_id = ? AND updated_at > ?', id, Time.now - 15.minutes).count
+  end
 end

@@ -6,7 +6,7 @@
         %a{:href => bars_path} All Bars
       %li
         %a{:href => new_bar_path} New Bar
-    %h3.text-muted Add Bar
+    %h3.text-muted Edit Bar
   .row.marketing
     .container
       .col-md-12.centerForm
@@ -34,9 +34,6 @@
             .form-group
               .col-sm-4.control-label= f.label :address
               .col-sm-8= f.text_field :address, :class => "form-control", :placeholder => "e.g. 1232 Main St. Chicago, IL"
-            .form-group
-              .col-sm-4.control-label= f.label :neighborhood
-              .col-sm-8= f.text_field :neighborhood, :class => "form-control", :placeholder => "optional"
             .form-group
               .col-sm-4.control-label= f.label :category
               .col-sm-8
